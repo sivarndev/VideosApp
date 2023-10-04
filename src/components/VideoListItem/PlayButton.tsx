@@ -9,7 +9,7 @@ export type IPlayButtonProps = {
 };
 
 const PlayButton: React.FC<IPlayButtonProps> = ({onPress, thumbnail}) => {
-    console.log(thumbnail, "URL");
+    // console.log(thumbnail, "URL");
     
   return (
     <Pressable onPress={onPress}>

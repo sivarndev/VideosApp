@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FlatList, View} from 'react-native';
 import {videoListViewStyle} from './styles';
 import {videoObjectModel, videos} from '../../assets/mock/videos';
 import VideoListItem from '../../components/VideoListItem/VideoListItem';
+import { checkPermission } from '../../utils/PermissionsRequests';
 
 export type IVideoListViewProps = {};
 
 const VideoListView: React.FC<IVideoListViewProps> = ({}) => {
+
+  useEffect(() => {
+    checkPermission();
+  }, []);
   const [state, setstate] = useState({
     videos: videos,
   });
