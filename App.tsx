@@ -25,6 +25,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import VideoListView from './src/views/VideoListView/VideoListView';
+import { VideoPlayerView } from './src/views/VideoPlayerView/VideoPlayerView';
+import { MainRoute } from './src/routes/MainRoute';
 
 
 
@@ -42,7 +44,7 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-       <VideoListView />
+       <MainRoute />
     </SafeAreaView>
   );
 }

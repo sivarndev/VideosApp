@@ -8,7 +8,8 @@ const wH = Dimensions.get("window").height;
 type videoListItemStyleType = {
     container: ViewStyle,
     innerContainer:ViewStyle,
-    downloadProgressBar:ViewStyle
+    downloadProgressBar:ViewStyle,
+    playBtn:ViewStyle
 }
 type playButtonStyleType = {
     container: ViewStyle
@@ -44,9 +45,13 @@ export const videoListItemStyle =  StyleSheet.create<videoListItemStyleType>({
     },
     downloadProgressBar:{
         width:'100%',
-        backgroundColor:'red',
+        backgroundColor:'#D3D3D3',
         borderRadius:2,
         height:10
+    },
+    playBtn:{
+        width:200,
+        backgroundColor:'red'
     }
 });
 
@@ -58,7 +63,8 @@ export const PlayButtonStyle =  StyleSheet.create<playButtonStyleType>({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'center',
-        borderRadius:5
+        borderRadius:5,
+       
     }
 
 });
