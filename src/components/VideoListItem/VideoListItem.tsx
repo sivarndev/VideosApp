@@ -18,21 +18,21 @@ export type IVideoListItemProps = {
 const VideoListItem: React.FC<IVideoListItemProps> = ({item}) => {
   const [state, setState] = useState({
     isOpenDownloadProgressBar: false,
-    downloadProgress: new Animated.Value(0),
+    downloadProgress: 0,
     isDowonloaded: false,
     isVideoExist:false
   });
 
   const nav = useNavigation();
 
-  useEffect(() => {
-    Animated.timing(state.downloadProgress,
-       {
-      toValue: 100,
-      duration: 2000,
-      useNativeDriver:true
-    }).start();
-  }, []);
+  // useEffect(() => {
+  //   Animated.timing(state.downloadProgress,
+  //      {
+  //     toValue: 100,
+  //     duration: 2000,
+  //     useNativeDriver:true
+  //   }).start();
+  // }, []);
 
   useEffect(() => {
     if (item) {
@@ -74,9 +74,8 @@ const checkfileExistsOrNot = async() => {
 
     setState(ps => ({
       ...ps,
-      downloadProgress: new Animated.Value(
+      downloadProgress:
         Math.floor((received / total) * 100),
-      ),
     }));
   };
   const download = async () => {
@@ -100,7 +99,7 @@ const checkfileExistsOrNot = async() => {
 
   const styles = StyleSheet.create({
     bar: {
-      height: 15,
+      height: 10,
       backgroundColor: 'grey',
       borderRadius: 5,
     },
@@ -119,7 +118,7 @@ const checkfileExistsOrNot = async() => {
       {state.isOpenDownloadProgressBar && (
         <View style={videoListItemStyle.downloadProgressBar}>
           <Animated.View
-            style={[styles.bar, {transform: [{scaleX: state.downloadProgress}]}]}
+            style={[styles.bar, {width: `${state.downloadProgress}%`}]}
           />
         </View>
       )}

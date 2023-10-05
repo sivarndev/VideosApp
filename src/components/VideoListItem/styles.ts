@@ -47,7 +47,8 @@ export const videoListItemStyle =  StyleSheet.create<videoListItemStyleType>({
         width:'100%',
         backgroundColor:'#D3D3D3',
         borderRadius:2,
-        height:10
+        height:10,
+   
     },
     playBtn:{
         width:200,
